@@ -1,0 +1,28 @@
+ #install tidyverse and rcpp packages.Tidyverse is a collection of R 
+#packages for data science. The packages include dplyr for data
+#manipulation, tidyr for data tidying, readr for data import, stringr for
+#strings, forcats for foctors e.t.c. Rcpp provides R functions as well as
+#c++ classes therfore offersintegration between R and c++,
+install.packages(c("Rcpp","tidyverse"))
+#if error occurs go to terminal and type
+#sudo apt-get install -y libxml2-dev libcurl4-openssl-dev libssl-dev
+
+#read the tidyverse package
+library(tidyverse)
+
+#read the csv file i.e comma separated values into R.
+f <- file.choose(flavors_of_cacao)
+chocolateData <- read("/User/user/Downloads/flavors_of_cacao.csv")
+
+#Use head() to read the first few lines of a file
+head(chocolateData)
+
+#Create a list of all the files
+file.list <- list.files(path="~/R/natural-language-processing/class-notes", pattern=".csv")
+
+#Loop over file list importing them and binding them together
+D1 <- do.call("rbind",lapply(file.list, read.csv, header = TRUE, stringsAsFactors = FALSE))
+
+setwd('C:\\Users\\user\Downloads\')
+data = read.csv("file.csv")
+data
